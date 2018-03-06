@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 注意xml元字符： &(逻辑与) &amp; <(小于) &lt; >(大于) &gt; "(双引号) &quot; '(单引号) &apos; -->
+<!--
+hive和mysql配置参数
+-->
+
+<project>
+  <From>
+    <!--hive数据库参数-->
+    <hive>
+    	<!--数据表所在数据库名-->
+        <database>yuncut_raw</database>
+    </hive>
+  </From>
+  
+  <To>
+    <!--写入分析指标结果的mysql配置参数-->
+    <mysql_result>
+      <address>10.99.2.107</address>
+      <port>3306</port>
+      <database>aokeanalysys</database>
+      <user>manbao</user>
+      <password>manbao</password>
+    </mysql_result>
+  
+    <!--分析指标sql语句存储表所在的mysql配置参数-->
+    <mysql_service_sql>
+      <address>10.99.2.107</address>
+      <port>3306</port>
+      <database>JobConf</database>
+      <table>a_y_spark_job_copy</table>
+      <user>manbao</user>
+      <password>manbao</password>
+    </mysql_service_sql>
+    
+    <!--写入分析指标sql运行message的mysql配置参数-->
+    <mysql_sql_run_message>
+      <address>10.99.2.107</address>
+      <port>3306</port>
+      <database>JobConf</database>
+      <table>a_job_log</table>
+      <user>manbao</user>
+      <password>manbao</password>
+    </mysql_sql_run_message>
+  </To>
+</project>
